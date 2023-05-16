@@ -1,0 +1,8 @@
+{
+    "presets": ["next/babel"],
+    "plugins": [
+        ["babel-plugin-styled-components", { "ssr": true }],
+        ["babel-plugin-twin", { "debug": false }],
+        "babel-plugin-macros"
+    ]
+}
