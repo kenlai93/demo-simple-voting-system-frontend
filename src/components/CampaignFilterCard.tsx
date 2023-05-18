@@ -57,16 +57,7 @@ const CampaignFilterCard: FC<CampaignFilterCardProps> = ({ onSubmit }) => {
     defaultValues: {
       name: '',
       choiceName: '',
-      sortBys: [
-        {
-          sortBy: 'endTime',
-          sortOrder: SortOrder.Desc,
-        },
-        {
-          sortBy: 'totalVote',
-          sortOrder: SortOrder.Desc,
-        },
-      ],
+      sortBys: DefaultSortBys,
     },
     resolver: zodResolver(schema),
   })

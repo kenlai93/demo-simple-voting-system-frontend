@@ -14,7 +14,10 @@ import { useCallback, useState } from 'react'
 import { Card, Spinner } from 'react-bootstrap'
 import tw from 'twin.macro'
 import MainLayout from './mainLayout'
-import CampaignFilterCard, { CampaignFilterCardForm } from '@app/components/CampaignFilterCard'
+import CampaignFilterCard, {
+  CampaignFilterCardForm,
+  DefaultSortBys,
+} from '@app/components/CampaignFilterCard'
 import cleanDeep from 'clean-deep'
 
 // grid grid-cols-2 gap-4
@@ -33,6 +36,9 @@ const Home: NextPageWithLayout = () => {
   const [selectedCampaignId, setSelectedCampaignId] = useState<string | undefined>(undefined)
   const [variables, setVariables] = useState<GqlQueryCampaignQueryVariables>({
     filter: {},
+    pageInfo: {
+      sortBys: DefaultSortBys
+    },
   })
 
   const { loading, data, error } = useQuery<GqlQueryCampaignQuery, GqlQueryCampaignQueryVariables>(
